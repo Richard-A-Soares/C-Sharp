@@ -1,0 +1,308 @@
+﻿<Window x:Class="TechSoft.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechSoft"
+        mc:Ignorable="d"
+        Title="TechSoft" 
+        WindowState="Maximized"
+        MinHeight="700" 
+		MinWidth="1024"  >
+    <Grid Style="{StaticResource ContainerDeFundo}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Topo do sistema - 1º Linha -->
+        <Border Grid.Row="0" 
+                Grid.ColumnSpan="6" 
+                Style="{StaticResource ContainerDeConteudo}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="5"
+                        Style="{StaticResource ContainerDeConteudo}">
+                    <TextBlock Text="Suporte"
+                               Grid.Column="5"
+                               Style="{StaticResource InfoUsuarioLogadoPainelInicial}"/>
+                </Border>
+
+
+                <TextBlock Text="Bem vindo(a)"
+                           Foreground="White"
+                           FontSize="20"
+                           FontFamily="Malgun Gothic Semilight"
+                           Padding="2"
+                           Margin="0, 0, 5, 0"
+                           Grid.Column="4"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Contador de cancelados e atendidos - 2º Linha -->
+        <Border Grid.Row="1" Grid.ColumnSpan="6"
+                Style="{StaticResource ContainerDeConteudo}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image Source="/imagens/cancelar128px.png" 
+                           Style="{StaticResource IconesContadorCanceladosAtendidos}"/>
+                    <TextBlock Text="0 Cancelados"
+                                Style="{StaticResource ContadorCanceladosAtendidos}"
+                               Grid.Column="1"/>
+                </Grid>
+
+                <Grid Grid.Column="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="/imagens/carraca128.png" 
+                           Style="{StaticResource IconesContadorCanceladosAtendidos}"/>
+                    <TextBlock Text="0 Atendidos"
+                                Style="{StaticResource ContadorCanceladosAtendidos}"
+                               Grid.Column="1"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Opçoes do sistema (botões) - 3º Linha -->
+        <Grid Grid.Row="2" Grid.ColumnSpan="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Caixa -->
+            <Border Grid.Column="0"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/imagens/bolsa-de-dinheiro512px.png" 
+                                Style="{StaticResource IconesButtonPrincipal}"/>
+                        <TextBlock Text="Caixa" 
+                                    Style="{StaticResource TextBlockButtonSuperior}"/>
+                    </StackPanel>
+                    
+                </Button>
+            </Border>
+
+            <!-- Mesas -->
+            <Border Grid.Column="1"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/imagens/mesa-de-jantar512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+                            <TextBlock  Text="Mesas" 
+                                        Style="{StaticResource TextBlockButtonSuperior}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="0"
+                                    Style="{StaticResource TextBlockButtonInferior}"/>
+                    </StackPanel>
+                </Button>
+
+            </Border>
+
+            <!-- Pedidos -->
+            <Border Grid.Column="2"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/imagens/pedidos512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+                            <TextBlock  Text="Pedidos" 
+                                        Style="{StaticResource TextBlockButtonSuperior}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="0"
+                                   Style="{StaticResource TextBlockButtonInferior}"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+            <!-- Produtos -->
+            <Border Grid.Column="3"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/imagens/cardapio512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+                            <TextBlock  Text="Produtos" 
+                                        Style="{StaticResource TextBlockButtonSuperior}"/>
+                        </StackPanel>
+                        <TextBlock Text="0"
+                                   Style="{StaticResource TextBlockButtonInferior}"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+
+            <!-- Usuarios -->
+            <Border Grid.Column="4"
+                        Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/imagens/homem-de-negocios512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+                            <TextBlock  Text="Usuários" 
+                                        Style="{StaticResource TextBlockButtonSuperior}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="0"
+                                    Style="{StaticResource TextBlockButtonInferior}"/>
+                    </StackPanel>
+                </Button>
+            </Border>
+        </Grid>
+
+        <!-- Container de anotação, mensagem, planilha e etc-->
+        <Border Grid.Row="3" Grid.ColumnSpan="3"
+                Style="{StaticResource ContainerDeConteudo}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Opções disponiveis do container -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Style="{StaticResource ButtonPainelPrincipal}">
+                        <Image Source="/imagens/sino128px.png"/>
+                    </Button>
+
+                    <Button Style="{StaticResource ButtonPainelPrincipal}"
+                            Grid.Column="1">
+                        <Image Source="/imagens/alfinete128px.png"/>
+                    </Button>
+                </Grid>
+                
+                <!-- Local aonde será chamado a opção informada do container -->
+                <Grid Grid.Row="1">
+                    <Border Style="{StaticResource ContainerDeConteudoInterno}">
+                        
+                    </Border>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+
+            <!-- Estoque -->
+            <Border Grid.Column="0"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/imagens/estoque512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+
+                            <TextBlock Text="Estoque" 
+                                        Style="{StaticResource TextBlockButtonSuperior}"/>
+                        </StackPanel>
+                        <TextBlock Text="0"
+                                    Style="{StaticResource TextBlockButtonInferior}"/>
+                    </StackPanel>
+
+                </Button>
+            </Border>
+
+            <!-- Troca de Mesa -->
+            <Border Grid.Column="1"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/imagens/transfer512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="Troca de Mesa"
+                                    Style="{StaticResource TextBlockButtonSuperior}"/>
+                    </StackPanel>
+                </Button>
+
+            </Border>
+
+            <Border Grid.Row="1" Grid.ColumnSpan="2"
+                    Style="{StaticResource ContainerDeConteudo}">
+                <Button Style="{StaticResource ButtonPainelPrincipal}">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="/imagens/ferramentas512px.png" 
+                                    Style="{StaticResource IconesButtonPrincipal}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="Configuração do Sistema"
+                                    Style="{StaticResource TextBlockButtonSuperior}"/>
+                    </StackPanel>
+                </Button>
+
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
